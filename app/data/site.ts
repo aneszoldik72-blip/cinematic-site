@@ -34,7 +34,7 @@ export const ctaContent = {
   title: "Ready to build something premium?",
   text: "For collaborations, website projects, or creative work, send a message and let's talk.",
   buttonLabel: "aneszoldik72@gmail.com",
-  buttonHref: "mailto:aneszoldik72@gmail.com",
+  buttonHref: "https://mail.google.com/mail/?view=cm&fs=1&to=aneszoldik72@gmail.com",
 };
 
 export const navItems = [

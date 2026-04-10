@@ -7,8 +7,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aether Studio",
-  description: "A cinematic website built step by step with Next.js and GSAP.",
+  title: "Aether Studio — Cinematic Websites for Modern Brands",
+  description:
+    "Aether Studio creates premium cinematic websites with elegant structure, refined motion, and custom-coded precision.",
+  openGraph: {
+    title: "Aether Studio — Cinematic Websites for Modern Brands",
+    description:
+      "Aether Studio creates premium cinematic websites with elegant structure, refined motion, and custom-coded precision.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Aether Studio — Cinematic Websites for Modern Brands",
+    description:
+      "Aether Studio creates premium cinematic websites with elegant structure, refined motion, and custom-coded precision.",
+  },
 };
 
 export default function RootLayout({

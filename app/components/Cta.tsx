@@ -14,7 +14,12 @@ export default function Cta() {
           textClassName="cta-text"
         />
 
-        <a href={ctaContent.buttonHref} className="cta-button">
+        <a
+  href={ctaContent.buttonHref}
+  className="cta-button"
+  target="_blank"
+  rel="noreferrer"
+>
           {ctaContent.buttonLabel}
         </a>
       </div>

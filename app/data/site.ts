@@ -30,11 +30,11 @@ export const showcaseSection = {
 };
 
 export const ctaContent = {
-  eyebrow: "Start Your Project",
-  title: "Ready to launch a website that feels premium from the first scroll?",
-  text: "Let’s turn your vision into a modern cinematic experience with stronger branding, cleaner design, and better digital presence.",
-  buttonLabel: "Start Your Project",
-  buttonHref: "#home",
+  eyebrow: "Get in Touch",
+  title: "Ready to build something premium?",
+  text: "For collaborations, website projects, or creative work, send a message and let's talk.",
+  buttonLabel: "aneszoldik72@gmail.com",
+  buttonHref: "mailto:aneszoldik72@gmail.com",
 };
 
 export const navItems = [

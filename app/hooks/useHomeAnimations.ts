@@ -143,20 +143,21 @@ export default function useHomeAnimations() {
       });
     });
 
-    const heroVisual = document.querySelector(".hero-visual");
-    const heroDevice = document.querySelector(".hero-device");
-    const customCursor = document.querySelector(".custom-cursor");
-    const navbar = document.querySelector(".navbar");
-    const interactiveElements = document.querySelectorAll(
+    const heroVisual = document.querySelector<HTMLElement>(".hero-visual");
+    const heroDevice = document.querySelector<HTMLElement>(".hero-device");
+    const customCursor = document.querySelector<HTMLElement>(".custom-cursor");
+    const navbar = document.querySelector<HTMLElement>(".navbar");
+    const interactiveElements = document.querySelectorAll<HTMLElement>(
       "a, button, .about-card, .showcase-item"
     );
 
-    const handleMove = (event: MouseEvent) => {
+    const handleMove = (event: Event) => {
       if (!heroVisual || !heroDevice) return;
 
+      const mouseEvent = event as MouseEvent;
       const rect = heroVisual.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      const x = (mouseEvent.clientX - rect.left) / rect.width - 0.5;
+      const y = (mouseEvent.clientY - rect.top) / rect.height - 0.5;
 
       gsap.to(heroDevice, {
         rotateY: -14 + x * 12,
@@ -179,12 +180,14 @@ export default function useHomeAnimations() {
       });
     };
 
-    const handleCursorMove = (event: MouseEvent) => {
+    const handleCursorMove = (event: Event) => {
       if (!customCursor) return;
 
+      const mouseEvent = event as MouseEvent;
+
       gsap.to(customCursor, {
-        x: event.clientX,
-        y: event.clientY,
+        x: mouseEvent.clientX,
+        y: mouseEvent.clientY,
         opacity: 1,
         duration: 0.18,
         ease: "power3.out",
@@ -227,7 +230,7 @@ export default function useHomeAnimations() {
     }
 
     window.addEventListener("mousemove", handleCursorMove);
-    document.addEventListener("mouseleave", handleCursorLeave);
+    window.addEventListener("mouseout", handleCursorLeave);
     window.addEventListener("scroll", handleNavbarScroll);
     handleNavbarScroll();
 
@@ -243,7 +246,7 @@ export default function useHomeAnimations() {
       }
 
       window.removeEventListener("mousemove", handleCursorMove);
-      document.removeEventListener("mouseleave", handleCursorLeave);
+      window.removeEventListener("mouseout", handleCursorLeave);
       window.removeEventListener("scroll", handleNavbarScroll);
 
       interactiveElements.forEach((element) => {

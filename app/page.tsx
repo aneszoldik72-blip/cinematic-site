@@ -12,7 +12,9 @@ export default function Home() {
   useHomeAnimations();
 
   return (
-    <div className="page-shell">
+   <div className="page-shell">
+  <div className="scroll-progress"></div>
+  <div className="custom-cursor"></div>
       <Navbar />
 
       <main>
